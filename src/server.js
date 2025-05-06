@@ -39,4 +39,4 @@ http.createServer((req, res) => {
         console.log(`Server listening at port 127.0.0.1:${port}`);
     }});
 console.log('Current directory:', __dirname);
-//Kacper Ostrówka
+// npm init

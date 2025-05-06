@@ -2,8 +2,9 @@ const http = require('http')
 const fs = require('fs')
 const path = require('path')
 
-http.createServer((req, res) => {
+let port = 8080;
 
+http.createServer((req, res) => {
 
 	switch (req.url) {
 		case '/':
@@ -31,11 +32,11 @@ http.createServer((req, res) => {
 			break;
 	}
 	res.end();
-}).listen(5555, (err) => {
+}).listen(port, (err) => {
     if (err) {
         console.log(`Error: ${err}`)
     } else {
-        console.log(`Server listening at port 127.0.0.1:5555`);
+        console.log(`Server listening at port 127.0.0.1:${port}`);
     }});
-
+console.log('Current directory:', __dirname);
 //Kacper Ostrówka

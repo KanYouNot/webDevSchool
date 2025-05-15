@@ -8,24 +8,18 @@ http.createServer((req, res) => {
 
 	switch (req.url) {
 		case '/':
-			const htmlPath = path.join("./index.html")
-			const htmlContent = fs.readFileSync(htmlPath)
-			res.writeHead(200, {'Content-Type': 'text/html'});
-			res.write(htmlContent)
+			res.writeHead(200, {"Content-Type": "text/html"});
+			res.write(fs.writeFileSync(path.join("./index.html")));
 			break;
 
 		case '/style.css':
-			const cssPath = path.join("./styles.css")
-			const cssContent = fs.readFileSync(cssPath)
 			res.writeHead(200, {'Content-Type': 'text/css'});
-			res.write(cssContent)
+			res.write(fs.readFileSync(path.join("./styles.css")));
 			break;
 
 		case '/script.js':
-			const jsPath = path.join("./script.js")
-			const jsContent = fs.readFileSync(jsPath)
 			res.writeHead(200, {'Content-Type': 'text/javascript'});
-			res.write(jsContent)
+			res.write(fs.readFileSync(path.join("./script.js")))
 			break;
 
 		default:

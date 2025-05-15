@@ -19,7 +19,7 @@ http.createServer((req, res) => {
 
 		case '/script.js':
 			res.writeHead(200, {'Content-Type': 'text/javascript'});
-			res.write(fs.readFileSync(path.join("./script.js")))
+			res.write(fs.readFileSync(path.join("./script.js")));
 			break;
 
 		default:
@@ -28,7 +28,7 @@ http.createServer((req, res) => {
 	res.end();
 }).listen(port, (err) => {
     if (err) {
-        console.log(`Error: ${err}`)
+        console.log(`Error: ${err}`);
     } else {
         console.log(`Server listening at port 127.0.0.1:${port}`);
     }});

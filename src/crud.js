@@ -79,11 +79,16 @@ conn.connect(err => {
 // })
 
 // 10
-conn.query("DELETE FROM cars WHERE nr_rejestracyjny = 'RP00001'", (err, results) => {
+// conn.query("DELETE FROM cars WHERE nr_rejestracyjny = 'RP00001'", (err, results) => {
+// 	if (err){throw err}
+// 	console.log(results)
+// })
+
+// 11
+conn.query("DELETE FROM cars WHERE rok_produkcji < 2016", (err, results) => {
 	if (err){throw err}
 	console.log(results)
 })
-
 conn.end()
 
 // npm init
